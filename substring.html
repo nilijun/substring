@@ -54,15 +54,18 @@ p{
 	float: left;
 }
 </style>
+</head>
+<body>
+<textarea id="text">一二三四一二三四一二三四一二三四一二三四一二三四一二三四一二三四一二三四</textarea> 
+<div id="wrap">
+	<input type="button" value="截取文字到右边"> 
+	<p></p>
+	<div>
+		<span></span>
+	</div>
+</div>
+<div id="box"></div>  
 <script type="text/javascript">
-/*
-	获取textarea 的value
-	利用substring截取0，1
-	把截取的字符串 加入到 box.innerHTML
-	利用substring截取1，length
-	去掉 textarea的value
-*/
-window.onload = function() {
 	var wrap = document.getElementById('wrap');
 	var btn = wrap.querySelector('#wrap input');
 	var text = document.getElementById('text');
@@ -85,18 +88,6 @@ window.onload = function() {
 		}
 		,300)
 	}
-};
 </script>
-</head>
-<body>
-<textarea id="text">一二三四一二三四一二三四一二三四一二三四一二三四一二三四一二三四一二三四</textarea> 
-<div id="wrap">
-	<input type="button" value="截取文字到右边"> 
-	<p></p>
-	<div>
-		<span></span>
-	</div>
-</div>
-<div id="box"></div>  
 </body>
 </html>
