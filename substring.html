@@ -18,28 +18,28 @@ p{
 	vertical-align: middle;
 	float: left;
 }
-#jindu{
+#wrap{
 	width: 150px;
 	height: 100px;
 	float: left;
 	text-align: center;
 }
-#jindu input{
+#wrap input{
 	width: 150px;
 }
-#jindu p{
+#wrap p{
 	margin: 5px 50px 0;
 	width: 50px;
 	height: 20px;
 	font: 16px/20px "宋体";
 	color: #000;
 }
-#jindu div{
+#wrap div{
 	width: 148px;
 	height: 20px;
 	border: 1px solid #000;
 }
-#jindu div span{
+#wrap div span{
 	float: left;
 	width: 0;
 	height: 20px;
@@ -63,36 +63,22 @@ p{
 	去掉 textarea的value
 */
 window.onload = function() {
-	var btn = document.getElementsByTagName('input')[0];
+	var wrap = document.getElementById('wrap');
+	var btn = wrap.querySelector('#wrap input');
 	var text = document.getElementById('text');
 	var box = document.getElementById('box');
-	var p = document.getElementById('textP');
+	var p = wrap.querySelector('#wrap p');
 	var span = document.getElementsByTagName('span')[0];
-
-
 	var length = text.innerHTML.length;
-
 	p.innerHTML = box.innerHTML.length + '/' + length;
-	// console.log(span);
-
-
 	btn.onclick = function() {
-
 		var timer = setInterval(function(){
 			var nub = text.innerHTML.substring(0,1);
 			var nub1 = text.innerHTML.substring(1,text.length);
-
-			// var span = queryS
-
-
 			p.innerHTML = box.innerHTML.length + '/' + length;
-
 			span.style.width = (box.innerHTML.length/length)*100+'%';
-
 			box.innerHTML += nub;
-
 			text.innerHTML = nub1;
-
 			if(nub.length == 0){
 				clearInterval(timer);
 			}
@@ -104,10 +90,10 @@ window.onload = function() {
 </head>
 <body>
 <textarea id="text">一二三四一二三四一二三四一二三四一二三四一二三四一二三四一二三四一二三四</textarea> 
-<div id="jindu">
-	<input type="button" value="截取一位到右边"> 
-	<p id="textP"></p>
-	<div id="aaa">
+<div id="wrap">
+	<input type="button" value="截取文字到右边"> 
+	<p></p>
+	<div>
 		<span></span>
 	</div>
 </div>
